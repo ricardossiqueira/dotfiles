@@ -1,0 +1,15 @@
+*
+
+!.gitignore
+
+!/fish/
+/fish/**
+!/fish/*
+
+!/starship/
+/starship/**
+!/starship/*
+
+!/tmux/
+/tmux/**
+!/tmux/*

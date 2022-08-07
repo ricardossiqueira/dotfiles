@@ -1,0 +1,86 @@
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+command_timeout = 1000
+
+[directory]
+format = " [$path]($style)[$read_only]($read_only_style) "
+truncation_length = 2
+style = "bold cyan"
+
+
+[character]
+success_symbol = " [❯](bold #FFD173)"   # " ❯ "//" ➜ "
+error_symbol = " [❯|](bold red)"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[docker_context]
+format = "via [$symbol $context]($style) "
+symbol = ""
+# symbol = "Docker"
+style = "bold blue"
+disabled = false
+
+[elixir]
+format = "via [$symbol]($style) "
+symbol = ""
+# symbol = "Elixir"
+style = "bold 135"
+disabled = false
+
+[nodejs]
+format = "via [$symbol $version]($style) "
+symbol = ""
+# symbol = "Node.js"
+style = "bold green"
+disabled = false
+
+[lua]
+format = "via [$symbol $version]($style) "
+symbol = ""
+# symbol = "Lua"
+style = "bold blue"
+disabled = false
+
+[python]
+format = "via [$symbol $version$venv]($style) "
+symbol = ""
+# symbol = "Python"
+style = "bold yellow"
+python_binary = "python"
+disabled = false
+
+[rust]
+format = "via [$symbol $version$venv]($style) "
+symbol = ""
+# symbol = "Rust"
+style = "bold #ff8b3d"
+disabled = false
+
+[git_branch]
+symbol = " "
+truncation_length = 100
+truncation_symbol = ""
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "⌨ lua"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[⟿ PICKING](bold red)"
+
+[git_metrics]
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+added_style = "bold green"
+deleted_style = "bold red"
+
+[git_status]
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
